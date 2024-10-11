@@ -1,4 +1,4 @@
-#  project: day17.py
+#  project: Rock Paper Lizard Spock!
 #        author: Rey Montanez <rmontanez2709394@woonsocketschools.com>
 #  date written: 10/9/2024
 #
@@ -8,7 +8,7 @@ Round = 0
 p1 = 0
 p2 = 0
 Playing = True
-print("ROCK PAPER SCISSORS")
+print("ROCK PAPER SCISSORS LIZARD SPOCK!")
 print()
 while Playing:
     print("Round", Round + 1)
