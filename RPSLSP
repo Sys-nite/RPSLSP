@@ -1,84 +1,97 @@
-#  project: Rock Paper Lizard Spock!
-#        author: Rey Montanez <rmontanez2709394@woonsocketschools.com>
-#  date written: 10/9/2024
-#
-#   description: ROCK PAPER SCISSORS
-## variables, Round, points
-Round = 0
-p1 = 0
-p2 = 0
+"""
+    project: rock paper scissors lizard spock.py
+    author: Rey Montanez <rmontanez2709394@woonsocketschools.com>
+    date written: 10/9/2024
+
+    description: ROCK PAPER SCISSORS LIZARD SPOCK
+"""
+## variables, round, points
+round = 0
+p1Score = 0
+p2Score = 0
 Playing = True
-print("ROCK PAPER SCISSORS LIZARD SPOCK!")
+
+print("""ROCK PAPER SCISSORS LIZARD SPOCK!
+Its best two out of three, good luck!""")
+print()
+User1 = input("Please input a username player one! : ")
+User2 = input("Please input a username player two! : ")
 print()
 while Playing:
-    print("Round", Round + 1)
+    #The round counter adds 1 after each round. P1 and P2 are the player inputs
+    print(f"Round, {round + 1}")
     P1 = input("Player 1, select (R)ock, (P)aper, (S)cissors, (L)izard, or (SP)ock : ")
     P2 = input("Player 2, select (R)ock, (P)aper, (S)cissors, (L)izard, or (SP)ock : ")
-    ## Player 1
+
+    # Player 1
     if (P1 == "R" and P2 == "S" or P1 == "R" and P2 == "L"):
-        print("Player 1 wins!")
-        Round += 1
-        p1 += 1
+        print(f"{User1} wins!")
+        round += 1
+        p1Score += 1  
     elif (P1 == "P" and P2 == "R" or P1 == "P" and P2 == "SP"):
-        print("Player 1 wins!")
-        Round += 1
-        p1 += 1
+        print(f"{User1} wins!")
+        round += 1
+        p1Score += 1
     elif (P1 == "S" and P2 == "P" or P1 == "S" and P2 == "L"):
-        print("player 1 wins!")
-        Round += 1
-        p1 += 1
+        print(f"{User1} wins!")
+        round += 1
+        p1Score += 1
     elif (P1 == "L" and P2 == "P" or P1 == "L" and P2 == "SP"):
-        print("player 1 wins!")
-        Round += 1
-        p1 += 1
+        print(f"{User1} wins!")
+        round += 1
+        p1Score += 1
     elif (P1 == "SP" and P2 == "R" or P1 == "SP" and P2 == "S"):
-        print("Player 1 wins!")
-        Round += 1
-        p1 += 1
-## player 2
+        print(f"{User1} wins!")
+        round += 1
+        p1Score += 1
+
+    # player 2
     elif (P2 == "P" and P1 == "R" or P2 == "P" and P1 == "SP"):
-        print("Player 2 wins!")
-        Round += 1
-        p2 += 1
+        print(f"{User2} wins!")
+        round += 1
+        p2Score += 1
     elif (P2 == "S" and P1 == "P" or P2 == "S" and P1 == "L"):
-        print("player 2 wins!")
-        Round += 1
-        p2 += 1
+        print(f"{User2} wins!")
+        round += 1
+        p2Score += 1
     elif (P2 == "R" and P1 == "S" or P2 == "R" and P1 == "L"):
-        print("Player 2 wins!")
-        Round += 1
-        p2 += 1
+        print(f"{User2} wins!")
+        round += 1
+        p2Score += 1
     elif (P2 == "L" and P1 == "P" or P2 == "L" and P1 == "SP"):
-        print("player 2 wins!")
-        Round += 1
-        p1 += 1
+        print(f"{User2} wins!")
+        round += 1
+        p1Score += 1
     elif (P2 == "SP" and P1 == "R" or P2 == "SP" and P1 == "S"):
-        print("Player 2 wins!")
-        Round += 1
-        p1 += 1
-## Tie
+        print(f"{User2} wins!")
+        round += 1
+        p1Score += 1  
+    # Tie
     else:
         print("Its a tie!")
-        Round += 1
-## Endgame choice
-    if p1 == 2 :
+        round += 1
+
+    # Endgame choice, if either player wins two out of the three rounds, they win. They then get the choice if they would like to play again or not
+    print()
+    if p1Score == 2 :
         Playing = False
-        print("Player 1 wins the game!")
+        print(f"{User1} wins the game! Congratulations!")
         Restart = input("Would you like to play again? (y/n) : ")
         if (Restart == "y"):
             Playing = True
-            Round = 0
+            round = 0
         elif (Restart == "n"):
             Playing = False
             print("Thanks for playing!")
 
-    elif p2 == 2 :
+    elif p2Score == 2 :
         Playing = False
-        print("Player 2 wins the game!")
+        print(f"{User2} wins the game! Congratulations!")
         Restart = input("Would you like to play again? (y/n) : ")
         if (Restart == "y"):
             Playing = True
-            Round = 0
+            round = 0
         elif (Restart == "n"):
             Playing = False
             print("Thanks for playing!")
+
